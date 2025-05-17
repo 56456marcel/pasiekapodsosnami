@@ -1,1 +1,127 @@
-# pasiekapodsosnami
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pasieka Pod Sosnami - Sklep Pszczelarski</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Pasieka Pod Sosnami</h1>
+</header>
+
+<section class="opis-pasieki">
+  <p>
+    🌿 <strong>Witamy w Pasiece Pod Sosnami!</strong> 🌿<br />
+    Z pasją i troską zbieramy najwyższej jakości naturalne miody, dbając o zdrowie pszczół i środowiska. <br />
+    Nasze produkty to harmonia smaku i natury, które przynoszą słodycz i zdrowie prosto do Twojego domu.
+  </p>
+</section>
+
+<h2 class="naglowek">Nasze produkty:</h2>
+
+<div class="container">
+  <div class="products">
+    <!-- produkty (jak wcześniej) -->
+    <div class="product" data-name="Miód lipowy" data-img="https://sklep.brat.pl/userdata/public/gfx/8234/lipowy-900ml.jpg" data-price="35 zł / 1 kg" data-desc="Miód lipowy o delikatnym smaku, zbierany z kwiatów lipy.">
+      <div class="product-header">
+        <img src="https://sklep.brat.pl/userdata/public/gfx/8234/lipowy-900ml.jpg" alt="Miód lipowy" />
+        <div class="product-info">
+          <h3>Miód lipowy</h3>
+          <p>35 zł / 1 kg</p>
+        </div>
+        <button class="open-btn">Otwórz</button>
+      </div>
+      <div class="product-details">
+        <img alt="" />
+        <div class="details-text">
+          <h3></h3>
+          <p class="price"></p>
+          <p class="description"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-name="Miód wielokwiatowy" data-img="https://sklep.brat.pl/userdata/public/gfx/8226/miod-wielokwiatowy-900ml.jpg" data-price="30 zł / 1 kg" data-desc="Miód wielokwiatowy o bogatym aromacie i smaku z wielu kwiatów.">
+      <div class="product-header">
+        <img src="https://sklep.brat.pl/userdata/public/gfx/8226/miod-wielokwiatowy-900ml.jpg" alt="Miód wielokwiatowy" />
+        <div class="product-info">
+          <h3>Miód wielokwiatowy</h3>
+          <p>30 zł / 1 kg</p>
+        </div>
+        <button class="open-btn">Otwórz</button>
+      </div>
+      <div class="product-details">
+        <img alt="" />
+        <div class="details-text">
+          <h3></h3>
+          <p class="price"></p>
+          <p class="description"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="product" data-name="Miód gryczany" data-img="https://bioshop.com.pl/userdata/public/gfx/8750/Miod-gryczany-1200-g---Pasieki-Rodziny-Sadowskich.jpg" data-price="40 zł / 1 kg" data-desc="Miód gryczany o intensywnym smaku i właściwościach zdrowotnych.">
+      <div class="product-header">
+        <img src="https://bioshop.com.pl/userdata/public/gfx/8750/Miod-gryczany-1200-g---Pasieki-Rodziny-Sadowskich.jpg" alt="Miód gryczany" />
+        <div class="product-info">
+          <h3>Miód gryczany</h3>
+          <p>40 zł / 1 kg</p>
+        </div>
+        <button class="open-btn">Otwórz</button>
+      </div>
+      <div class="product-details">
+        <img alt="" />
+        <div class="details-text">
+          <h3></h3>
+          <p class="price"></p>
+          <p class="description"></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.product').forEach(product => {
+    const btn = product.querySelector('.open-btn');
+    const details = product.querySelector('.product-details');
+    const imgElem = details.querySelector('img');
+    const nameElem = details.querySelector('h3');
+    const priceElem = details.querySelector('.price');
+    const descElem = details.querySelector('.description');
+
+    btn.addEventListener('click', () => {
+      const isActive = details.classList.contains('active');
+
+      document.querySelectorAll('.product-details.active').forEach(openDetails => {
+        openDetails.classList.remove('active');
+      });
+
+      if (!isActive) {
+        imgElem.src = product.getAttribute('data-img');
+        imgElem.alt = product.getAttribute('data-name');
+        nameElem.textContent = product.getAttribute('data-name');
+        priceElem.textContent = product.getAttribute('data-price');
+        descElem.textContent = product.getAttribute('data-desc');
+        details.classList.add('active');
+        btn.textContent = 'Zamknij';
+      } else {
+        details.classList.remove('active');
+        btn.textContent = 'Otwórz';
+      }
+
+      document.querySelectorAll('.product').forEach(p => {
+        if (p !== product) {
+          p.querySelector('.open-btn').textContent = 'Otwórz';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
