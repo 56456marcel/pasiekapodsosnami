@@ -1,180 +1,123 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fffbee;
-  color: #4b3b00;
+  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 20px;
+  background: #fff8e1;
+  color: #333;
 }
 
-header h1 {
+.topbar {
+  background-color: #ffcc00;
+  padding: 1em;
   text-align: center;
-  padding: 25px 0 10px;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #b28500;
-  text-shadow: 1px 1px 3px #d6b800;
+  font-size: 1.8em;
+  font-weight: bold;
 }
 
-.opis-pasieki {
-  max-width: 900px;
-  margin: 0 auto 40px auto;
-  padding: 25px 35px;
-  background: linear-gradient(135deg, #fff4c2, #ffe066);
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(255, 211, 80, 0.5);
-  color: #6b4f00;
-  font-size: 1.25rem;
-  font-style: italic;
+.intro {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 1em;
+  font-size: 1.1em;
   text-align: center;
-  line-height: 1.6;
-  border: 2px solid #d6b800;
-  letter-spacing: 0.03em;
-  user-select: none;
 }
 
-.naglowek {
+.section-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: #aa7a00;
-  text-shadow: 1px 1px 2px #f5e28a;
-}
-
-.container {
-  max-width: 950px;
-  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 1.5em;
+  color: #8b5e00;
 }
 
 .products {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
 }
 
 .product {
-  background: #fffdf3;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-  padding: 15px 20px;
-  transition: background 0.3s ease;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ccc;
+  width: 250px;
+  padding: 1em;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .product:hover {
-  background: #fff8b0;
+  transform: scale(1.05);
 }
 
-.product-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.product-header img {
-  width: 120px;
+.product img {
+  width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 8px #d6b800a0;
 }
 
-.product-info h3 {
-  margin: 0 0 8px;
-  font-size: 1.5rem;
-  color: #8a6000;
-}
-
-.product-info p {
-  margin: 0;
-  font-weight: 600;
-  color: #6b4f00;
-}
-
-.open-btn {
-  margin-left: auto;
-  padding: 8px 16px;
-  background-color: #deb800;
+button {
+  background-color: #ffa000;
   border: none;
-  border-radius: 25px;
-  color: #fff9d3;
-  font-weight: 700;
+  padding: 0.5em 1em;
+  color: white;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px #d6b800cc;
+  margin-top: 1em;
 }
 
-.open-btn:hover {
-  background-color: #a57f00;
+button:hover {
+  background-color: #ff8f00;
 }
 
 .product-details {
-  margin-top: 20px;
-  display: none;
-  border-top: 2px solid #d6b800;
-  padding-top: 20px;
-  gap: 15px;
-  align-items: center;
-}
-
-.product-details.active {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2em;
+  max-width: 900px;
+  margin: 3em auto;
+  padding: 2em;
+  background: #fff3cd;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #aaa;
 }
 
 .product-details img {
-  max-width: 220px;
+  width: 300px;
   border-radius: 10px;
-  box-shadow: 0 0 12px #d6b800cc;
 }
 
-.details-text {
-  max-width: 600px;
-  margin-left: 20px;
-  color: #5a4000;
+.product-details div {
+  max-width: 400px;
 }
 
-.details-text h3 {
-  margin-top: 0;
-  font-size: 1.8rem;
-  color: #8a6000;
+.hidden {
+  display: none;
 }
 
-.details-text .price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 10px 0;
-  color: #aa7a00;
+footer {
+  background-color: #ffcc00;
+  text-align: center;
+  padding: 1em;
+  margin-top: 3em;
 }
 
-.details-text .description {
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-/* Responsywność */
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .products {
     flex-direction: column;
+    align-items: center;
   }
 
-  .product-details.active {
+  .product-details {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
   .product-details img {
-    margin-bottom: 15px;
-    max-width: 100%;
-  }
-
-  .details-text {
-    margin-left: 0;
-  }
-
-  .product-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .open-btn {
-    margin-left: 0;
-    margin-top: 10px;
+    width: 90%;
   }
 }
