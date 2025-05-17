@@ -125,3 +125,183 @@
 
 </body>
 </html>
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fffbee;
+  color: #4b3b00;
+  margin: 0;
+  padding: 0 20px;
+}
+
+header h1 {
+  text-align: center;
+  padding: 25px 0 10px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #b28500;
+  text-shadow: 1px 1px 3px #d6b800;
+}
+
+.opis-pasieki {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 25px 35px;
+  background: linear-gradient(135deg, #fff4c2, #ffe066);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 211, 80, 0.5);
+  color: #6b4f00;
+  font-size: 1.25rem;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.6;
+  border: 2px solid #d6b800;
+  letter-spacing: 0.03em;
+  user-select: none;
+}
+
+.naglowek {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #aa7a00;
+  text-shadow: 1px 1px 2px #f5e28a;
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.product {
+  background: #fffdf3;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  padding: 15px 20px;
+  transition: background 0.3s ease;
+}
+
+.product:hover {
+  background: #fff8b0;
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-header img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #d6b800a0;
+}
+
+.product-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: #8a6000;
+}
+
+.product-info p {
+  margin: 0;
+  font-weight: 600;
+  color: #6b4f00;
+}
+
+.open-btn {
+  margin-left: auto;
+  padding: 8px 16px;
+  background-color: #deb800;
+  border: none;
+  border-radius: 25px;
+  color: #fff9d3;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px #d6b800cc;
+}
+
+.open-btn:hover {
+  background-color: #a57f00;
+}
+
+.product-details {
+  margin-top: 20px;
+  display: none;
+  border-top: 2px solid #d6b800;
+  padding-top: 20px;
+  gap: 15px;
+  align-items: center;
+}
+
+.product-details.active {
+  display: flex;
+}
+
+.product-details img {
+  max-width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px #d6b800cc;
+}
+
+.details-text {
+  max-width: 600px;
+  margin-left: 20px;
+  color: #5a4000;
+}
+
+.details-text h3 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #8a6000;
+}
+
+.details-text .price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #aa7a00;
+}
+
+.details-text .description {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Responsywność */
+@media (max-width: 720px) {
+  .products {
+    flex-direction: column;
+  }
+
+  .product-details.active {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-details img {
+    margin-bottom: 15px;
+    max-width: 100%;
+  }
+
+  .details-text {
+    margin-left: 0;
+  }
+
+  .product-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .open-btn {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
