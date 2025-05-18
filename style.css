@@ -130,113 +130,152 @@ header {
   padding: 1rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  border: 1px solid #F9C74F;
+  cursor: default;
 }
 
 .produkt:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(107, 76, 26, 0.25);
-  border-color: #6B4C1A;
+  box-shadow: 0 10px 20px rgba(107, 76, 26, 0.3);
 }
 
 .produkt img {
   max-width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(249, 199, 79, 0.3);
 }
 
-/* Formularz */
+.produkt h3 {
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #6B4C1A;
+}
+
+.produkt p {
+  font-size: 0.95rem;
+  color: #5a3e0e;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* Przyciski kup teraz */
+.produkt button {
+  background-color: #F9C74F;
+  color: #6B4C1A;
+  font-weight: 700;
+  border: 2px solid #6B4C1A;
+  padding: 0.5rem 1.4rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.produkt button:hover {
+  background-color: #6B4C1A;
+  color: #F9C74F;
+  border-color: #F9C74F;
+}
+
+/* Formularz kontaktowy */
 .kontakt-form {
-  background: #FFF8E7;
-  padding: 2rem;
-  border-radius: 12px;
-  max-width: 600px;
-  box-shadow: 0 3px 15px rgba(107, 76, 26, 0.15);
-  border: 1px solid #F9C74F;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .kontakt-form label {
-  display: block;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
   font-weight: 600;
   color: #6B4C1A;
 }
 
-.kontakt-form input[type="text"],
-.kontakt-form input[type="email"],
+.kontakt-form input,
 .kontakt-form textarea {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
-  font-size: 1rem;
+  padding: 0.6rem 1rem;
   border: 2px solid #F9C74F;
-  border-radius: 6px;
-  transition: border-color 0.3s ease;
-  background: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
   color: #6B4C1A;
+  resize: vertical;
+  transition: border-color 0.3s ease;
 }
 
-.kontakt-form input[type="text"]:focus,
-.kontakt-form input[type="email"]:focus,
+.kontakt-form input:focus,
 .kontakt-form textarea:focus {
   outline: none;
   border-color: #6B4C1A;
+  background-color: #fff8dc;
 }
 
 .kontakt-form button {
+  margin-top: 1.5rem;
   background-color: #6B4C1A;
   color: #F9C74F;
   font-weight: 700;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1.8rem;
   font-size: 1.1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin-top: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .kontakt-form button:hover {
-  background-color: #F9C74F;
-  color: #6B4C1A;
+  background-color: #f4a300;
+  color: #4b3400;
+}
+
+/* Ukryte pole honeypot */
+.hidden {
+  display: none;
 }
 
 /* Stopka */
 footer {
-  background: #6B4C1A;
-  color: #F9C74F;
-  padding: 1rem 0;
-  margin-top: 3rem;
   text-align: center;
+  padding: 1.5rem 0;
+  background: #F9C74F;
+  color: #6B4C1A;
   font-weight: 600;
+  box-shadow: 0 -2px 6px rgba(107, 76, 26, 0.3);
+  margin-top: 3rem;
 }
 
-/* Animacje */
+/* Animacja fadeIn */
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Ukryty honeypot */
-.hidden {
-  display: none;
 }
 
 /* Responsywność */
 @media (max-width: 900px) {
   .produkty {
     flex-direction: column;
+    gap: 2rem;
   }
 
   .produkt {
     flex: 1 1 100%;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .menu {
+    gap: 1rem;
   }
 }
