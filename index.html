@@ -123,56 +123,6 @@
   });
 </script>
 
-
-  <script>
-  const products = {
-    lipowy: {
-      img: "https://sklep.brat.pl/userdata/public/gfx/8234/lipowy-900ml.jpg",
-      name: "Miód lipowy",
-      price: "35 zł / 1 kg",
-      desc: "Działa przeciwzapalnie i uspokajająco. Pomaga przy przeziębieniach i problemach z gardłem."
-    },
-    wielokwiatowy: {
-      img: "https://sklep.brat.pl/userdata/public/gfx/8226/miod-wielokwiatowy-900ml.jpg",
-      name: "Miód wielokwiatowy",
-      price: "30 zł / 1 kg",
-      desc: "Idealny do codziennego stosowania. Wzmacnia odporność i działa energetyzująco."
-    },
-    gryczany: {
-      img: "https://bioshop.com.pl/userdata/public/gfx/8750/Miod-gryczany-1200-g---Pasieki-Rodziny-Sadowskich.jpg",
-      name: "Miód gryczany",
-      price: "40 zł / 1 kg",
-      desc: "Bogaty w żelazo. Wspiera układ krwionośny i pomaga przy anemii."
-    }
-  };
-
-  function showDetails(key) {
-    const product = products[key];
-    document.getElementById("details-img").src = product.img;
-    document.getElementById("details-name").textContent = product.name;
-    document.getElementById("details-price").textContent = product.price;
-    document.getElementById("details-desc").textContent = product.desc;
-    document.getElementById("product-details").classList.add("active");
-    document.getElementById("product-details").scrollIntoView({ behavior: "smooth" });
-  }
-</script>
-<article class="product">
-  <img src="https://sklep.brat.pl/userdata/public/gfx/8234/lipowy-900ml.jpg" alt="Miód lipowy" />
-  <h3>Miód lipowy</h3>
-  <button onclick="showDetails('lipowy')">Otwórz</button>
-</article>
-
-<article class="product">
-  <img src="https://sklep.brat.pl/userdata/public/gfx/8226/miod-wielokwiatowy-900ml.jpg" alt="Miód wielokwiatowy" />
-  <h3>Miód wielokwiatowy</h3>
-  <button onclick="showDetails('wielokwiatowy')">Otwórz</button>
-</article>
-
-<article class="product">
-  <img src="https://bioshop.com.pl/userdata/public/gfx/8750/Miod-gryczany-1200-g---Pasieki-Rodziny-Sadowskich.jpg" alt="Miód gryczany" />
-  <h3>Miód gryczany</h3>
-  <button onclick="showDetails('gryczany')">Otwórz</button>
-</article>
-
+  
 </body>
 </html>
