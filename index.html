@@ -4,116 +4,107 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pasieka pod Sosnami</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<header>
-  <div class="container header-container">
-    <h1 class="logo">Pasieka pod Sosnami</h1>
-    <nav>
-      <ul class="menu">
-        <li><a href="#" data-target="onas" class="active">O nas</a></li>
-        <li><a href="#" data-target="produkty">Nasze produkty</a></li>
-        <li><a href="#" data-target="kontakt">Kontakt</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-
-  <section id="onas" class="content-section active">
-    <h2>O nas</h2>
-    <p>
-      Jesteśmy rodzinną pasieką położoną wśród sosnowych lasów, gdzie pszczoły żyją w naturalnych warunkach.
-      Naszą misją jest tworzenie miodu najwyższej jakości, z poszanowaniem tradycji i przyrody. 
-      Od lat dbamy o zdrowie pszczół, jakość środowiska i naturalny charakter naszych produktów.
-    </p>
-  </section>
-
-  <section id="produkty" class="content-section">
-    <h2>Nasze produkty</h2>
-    <div class="produkty">
-
-      <article class="produkt">
-        <img src="https://a.allegroimg.com/original/112818/b17269db4b37897b5e3529d0874e/MIOD-LIPOWY-Z-WARMII-1-2-KG-SWIEZY-I-AROMATYCZNY" alt="Miód lipowy" />
-        <h3>Miód lipowy</h3>
-        <p>Naturalny miód lipowy z okolicznych lasów, o delikatnym smaku i aromacie.</p>
-        <button>Kup teraz</button>
-      </article>
-
-      <article class="produkt">
-        <img src="https://sklep.brat.pl/userdata/public/gfx/8226/miod-wielokwiatowy-900ml.jpg" alt="Miód wielokwiatowy" />
-        <h3>Miód wielokwiatowy</h3>
-        <p>Klasyczny miód o bogatym bukiecie kwiatowym, idealny do herbaty i deserów.</p>
-        <button>Kup teraz</button>
-      </article>
-
-      <article class="produkt">
-        <img src="https://bioshop.com.pl/userdata/public/gfx/8750/Miod-gryczany-1200-g---Pasieki-Rodziny-Sadowskich.jpg" alt="Miód gryczany" />
-        <h3>Miód gryczany</h3>
-        <p>Charakterystyczny miód gryczany ceniony za wyjątkowy smak i właściwości zdrowotne.</p>
-        <button>Kup teraz</button>
-      </article>
-
+  <header>
+    <div class="container header-container">
+      <div class="logo">Pasieka pod Sosnami</div>
+      <nav>
+        <ul class="menu">
+          <li><a href="#" class="active" data-target="o-nas">O nas</a></li>
+          <li><a href="#" data-target="nasze-produkty">Nasze Produkty</a></li>
+          <li><a href="#" data-target="kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="kontakt" class="content-section">
-    <h2>Kontakt</h2>
-    <form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="kontakt-form">
-      <input type="hidden" name="form-name" value="kontakt" />
-      <p class="hidden">
-        <label>Nie wypełniaj tego pola: <input name="bot-field" /></label>
+  <main class="container">
+    <section id="o-nas" class="content-section active">
+      <h2>O nas</h2>
+      <p>
+        Witamy w Pasiece pod Sosnami! Jesteśmy rodziną pszczelarzy z wieloletnią tradycją.
+        Nasze ule znajdują się w sercu sosnowych lasów, co nadaje naszemu miodowi
+        wyjątkowy smak i aromat. Dbamy o pszczoły z miłością i szacunkiem dla natury.
       </p>
+    </section>
 
-      <label>
-        Imię i nazwisko:<br />
-        <input type="text" name="name" required />
-      </label>
+    <section id="nasze-produkty" class="content-section">
+      <h2>Nasze Produkty</h2>
+      <div class="produkty">
+        <div class="produkt">
+          <img src="https://sklep.brat.pl/userdata/public/gfx/8226/miod-wielokwiatowy-900ml.jpg" alt="Miód wielokwiatowy" />
+          <h3>Miód wielokwiatowy</h3>
+          <button>Więcej</button>
+        </div>
+        <div class="produkt">
+          <img src="https://a.allegroimg.com/original/112818/b17269db4b37897b5e3529d0874e/MIOD-LIPOWY-Z-WARMII-1-2-KG-SWIEZY-I-AROMATYCZNY" alt="Miód lipowy" />
+          <h3>Miód lipowy</h3>
+          <button>Więcej</button>
+        </div>
+        <div class="produkt">
+          <img src="https://bioshop.com.pl/userdata/public/gfx/8750/Miod-gryczany-1200-g---Pasieki-Rodziny-Sadowskich.jpg" alt="Miód gryczany" />
+          <h3>Miód gryczany</h3>
+          <button>Więcej</button>
+        </div>
+      </div>
+    </section>
 
-      <label>
-        Twój e-mail:<br />
-        <input type="email" name="email" required />
-      </label>
+    <section id="kontakt" class="content-section">
+      <h2>Kontakt</h2>
+      <form name="contact" method="POST" data-netlify="true" class="kontakt-form" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>Nie wypełniaj tego pola <input name="bot-field" /></label>
+        </p>
 
-      <label>
-        Wiadomość:<br />
-        <textarea name="message" rows="5" required></textarea>
-      </label>
+        <label for="name">Imię i nazwisko</label>
+        <input type="text" id="name" name="name" required />
 
-      <button type="submit">Wyślij wiadomość</button>
-    </form>
-  </section>
+        <label for="email">Adres e-mail</label>
+        <input type="email" id="email" name="email" required />
 
-</main>
+        <label for="message">Wiadomość</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
-<footer>
-  <div class="container footer-container">
-    <p>&copy; 2025 Pasieka pod Sosnami</p>
-  </div>
-</footer>
+        <button type="submit">Wyślij</button>
+      </form>
+    </section>
+  </main>
 
-<script>
-  // Prosta obsługa menu i przełączanie sekcji bez scrollowania
-  const links = document.querySelectorAll('.menu a');
-  const sections = document.querySelectorAll('.content-section');
+  <footer>
+    &copy; 2025 Pasieka pod Sosnami. Wszelkie prawa zastrzeżone.
+  </footer>
 
-  links.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const targetId = link.dataset.target;
+  <script>
+    // Prosta obsługa menu i sekcji
+    const menuLinks = document.querySelectorAll('.menu a');
+    const sections = document.querySelectorAll('.content-section');
 
-      sections.forEach(section => {
-        section.classList.toggle('active', section.id === targetId);
+    menuLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-target');
+
+        // Aktywuj odpowiednią sekcję
+        sections.forEach(sec => {
+          if (sec.id === target) {
+            sec.classList.add('active');
+          } else {
+            sec.classList.remove('active');
+          }
+        });
+
+        // Aktywuj link w menu
+        menuLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
       });
-
-      links.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
