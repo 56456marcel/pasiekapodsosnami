@@ -161,10 +161,10 @@ header {
 
 /* Przyciski kup teraz */
 .produkt button {
-  background-color: #F9C74F;
-  color: #6B4C1A;
+  background-color: #A9744F;  /* jasny brąz */
+  color: #FFF8E7;             /* jasny kremowy tekst */
   font-weight: 700;
-  border: 2px solid #6B4C1A;
+  border: 2px solid #6B4C1A; /* ciemny brąz */
   padding: 0.5rem 1.4rem;
   font-size: 1rem;
   border-radius: 10px;
@@ -173,10 +173,11 @@ header {
 }
 
 .produkt button:hover {
-  background-color: #6B4C1A;
-  color: #F9C74F;
+  background-color: #6B4C1A; /* ciemny brąz */
+  color: #F9C74F;            /* miodowy żółty */
   border-color: #F9C74F;
 }
+
 
 /* Formularz kontaktowy */
 .kontakt-form {
