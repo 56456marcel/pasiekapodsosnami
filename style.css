@@ -1,23 +1,32 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fffbee;
-  color: #333;
-  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fffbee 0%, #f7f1d1 100%);
+  color: #3a3a1c;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f4e8b3;
+  background-color: #e4d580;
   padding: 1em 2em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo h1 {
   margin: 0;
-  font-size: 1.8em;
-  color: #2f3b1f;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #2a3112;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
 }
 
 nav ul {
@@ -25,83 +34,147 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 2em;
+  gap: 2.5em;
 }
 
 nav ul li a {
   text-decoration: none;
-  font-weight: bold;
-  color: #2f3b1f;
-  font-size: 1em;
+  font-weight: 700;
+  color: #2a3112;
+  font-size: 1.1rem;
+  position: relative;
+  padding: 0.2em 0;
   transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #b38829;
+  transition: width 0.3s ease;
 }
 
 nav ul li a:hover,
-nav ul li a:focus {
+nav ul li a.active {
   color: #b38829;
-  outline: none;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
 }
 
 main {
-  max-width: 900px;
+  flex-grow: 1;
+  max-width: 960px;
   margin: 2em auto;
   padding: 0 1em;
+  position: relative;
+  min-height: 60vh;
+}
+
+/* Sekcje */
+.content-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.content-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+  color: #4a4a19;
+  border-bottom: 3px solid #b38829;
+  padding-bottom: 0.3em;
 }
 
 /* Produkty */
 .produkty {
   display: flex;
-  gap: 1.5em;
+  gap: 2em;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .produkt {
-  background-color: #fff5d1;
-  border-radius: 10px;
-  padding: 1em;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  flex: 1 1 250px;
+  background: #fff9d4;
+  border-radius: 15px;
+  padding: 1.2em;
+  box-shadow: 0 5px 15px rgba(180, 160, 40, 0.2);
+  flex: 1 1 280px;
   max-width: 280px;
   text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.produkt:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(180, 160, 40, 0.35);
+}
+
+.produkt img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1em;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .produkt h3 {
   margin-top: 0;
-  color: #5a3d1c;
+  color: #5a4b1c;
+  font-weight: 700;
 }
 
 .produkt p {
   font-style: italic;
-  color: #5a4a1a;
-  margin: 0.5em 0 1em 0;
+  color: #6b5f18;
+  margin: 0.6em 0 1em;
+  min-height: 60px;
 }
 
 .produkt button {
-  background-color: #d4a437;
+  background-color: #b38829;
   border: none;
-  padding: 0.6em 1.2em;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 0.6em 1.4em;
+  border-radius: 8px;
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1em;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .produkt button:hover {
-  background-color: #b38829;
+  background-color: #7a6214;
 }
 
+/* Formularz kontaktowy */
 form {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.2em;
 }
 
 label {
-  font-weight: bold;
-  color: #5a4a1a;
+  font-weight: 600;
+  color: #5a4b1c;
 }
 
 input[type="text"],
@@ -109,33 +182,48 @@ input[type="email"],
 textarea {
   width: 100%;
   padding: 0.7em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  border: 2px solid #d9d58f;
+  border-radius: 8px;
   font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
   resize: vertical;
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #b38829;
+  outline: none;
+}
+
 button[type="submit"] {
-  background-color: #d4a437;
+  background-color: #b38829;
   color: white;
-  padding: 0.8em;
+  padding: 0.9em;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1em;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 1em;
   transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-  background-color: #b38829;
+  background-color: #7a6214;
+}
+
+/* Ukryte pole honeypot */
+.hidden {
+  display: none;
 }
 
 footer {
   text-align: center;
-  background-color: #f4e8b3;
-  padding: 1em 0;
+  background-color: #e4d580;
+  padding: 1.2em 0;
   margin-top: 3em;
-  color: #2f3b1f;
-  font-weight: bold;
+  color: #2a3112;
+  font-weight: 700;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
 }
